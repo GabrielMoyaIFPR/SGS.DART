@@ -10,6 +10,7 @@ class UserService {
     validateName(user.nome);
     validateEmail(user.email);
     validatePhone(user.telefone);
+    validatePassword(user.senha);
     _dao.save(user);
   }
 
@@ -50,6 +51,20 @@ class UserService {
     } else if (!format.hasMatch(phone)) {
       throw new DomainLayerException(
           'Formato do telefone inválido. O formato deve ser (99)99999-9999');
+    }
+  }
+
+  validatePassword(String senha) {
+    var min = 8;
+    var max = 50;
+    if (senha == null) {
+      throw new DomainLayerException('O nome é obrigatório');
+    } else if (senha.length < min) {
+      throw new DomainLayerException(
+          'O nome deve possuir pelo menos $min carácteres');
+    } else if (senha.length > max) {
+      throw new DomainLayerException(
+          'O nome deve possuir no máximo $max carácteres');
     }
   }
 }
