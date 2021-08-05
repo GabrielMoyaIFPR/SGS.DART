@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sgs/features/reminder/domain/entities/user.dart';
-import 'package:sgs/features/reminder/presentation/pages/user_details_back.dart';
+import 'package:sgs/features/reminder/presentation/pages/Users/user_details_back.dart';
 
 import 'package:url_launcher/url_launcher.dart';
 

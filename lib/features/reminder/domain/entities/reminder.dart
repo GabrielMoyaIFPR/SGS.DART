@@ -4,9 +4,9 @@ import 'package:equatable/equatable.dart';
 
 class Reminder extends Equatable {
 
-  final int id;
-  final String titulo;
-  final String descricao;
+  int id;
+  String titulo;
+  String descricao;
 
 
   Reminder(

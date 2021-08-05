@@ -1,7 +1,7 @@
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter/material.dart';
 import 'package:sgs/features/reminder/domain/entities/user.dart';
-import 'package:sgs/features/reminder/presentation/pages/user_list_back.dart';
+import 'package:sgs/features/reminder/presentation/pages/Users/user_list_back.dart';
 
 class UserList extends StatelessWidget {
 
