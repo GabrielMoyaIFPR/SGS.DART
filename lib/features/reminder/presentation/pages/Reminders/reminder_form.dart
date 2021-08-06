@@ -5,7 +5,7 @@ import 'package:sgs/features/reminder/presentation/pages/Reminders/reminder_form
 class ReminderForm extends StatelessWidget {
   
 
-  Widget fieldName(ReminderFormBack back){
+  Widget fieldTitulo(ReminderFormBack back){
     return TextFormField(
       onSaved: (newValue)=>back.reminder.titulo = newValue,
       initialValue: back.reminder.titulo,
@@ -14,7 +14,7 @@ class ReminderForm extends StatelessWidget {
       ),
     );
   }
-  Widget fieldEmail(ReminderFormBack back){
+  Widget fieldDescricao(ReminderFormBack back){
     return TextFormField(
       onSaved: (newValue) => back.reminder.descricao = newValue,
       initialValue: back.reminder.descricao,
