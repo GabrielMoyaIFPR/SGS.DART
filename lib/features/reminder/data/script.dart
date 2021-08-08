@@ -20,7 +20,7 @@ final createTableReminder = '''
 final createTableSleep = '''
  CREATE TABLE reminder(
    id INTEGER NOT NULL PRIMARY KEY
-   ,DATE dataInicial
+   ,DATE dataInicial NOT NULL
    ,DATE dataFinal
  )
 ''';

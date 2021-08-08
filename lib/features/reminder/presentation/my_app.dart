@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sgs/features/reminder/presentation/pages/Login/login_form.dart';
 import 'package:sgs/features/reminder/presentation/pages/Reminders/reminder_details.dart';
 import 'package:sgs/features/reminder/presentation/pages/Reminders/reminder_form.dart';
 import 'package:sgs/features/reminder/presentation/pages/Sleep/sleep_details.dart';
@@ -10,6 +11,7 @@ import 'package:sgs/features/reminder/presentation/pages/Users/user_list.dart';
 class MyApp extends StatelessWidget {
   static const HOME = '/';
   static const USER_FORM = 'user-form';
+  static const USER_LIST = 'user-list';
   static const USER_DETAILS = 'user-details';
   static const REMINDER_FORM = 'reminder-form';
   static const REMINDER_DETAILS = 'reminder-details';
@@ -18,13 +20,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Aula Flutter',
+      title: 'Sistema Gerenciador de Sono',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       routes: {
-      HOME : (context) => UserList(),
+      HOME : (context) => LoginForm(),
+      USER_LIST : (context) => UserList(),
       USER_FORM: (context) => UserForm(),
       USER_DETAILS: (context) => UserDetails(),
       REMINDER_FORM: (context) => ReminderForm(),

@@ -1,26 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:sgs/features/reminder/presentation/pages/Users/user_form_back.dart';
 
 
-class UserForm extends StatelessWidget {
+class LoginForm extends StatelessWidget {
   
   final _form = GlobalKey<FormState>();
 
-  Widget fieldName(UserFormBack back){
-    return TextFormField(
-      validator: back.validateName,
-      onSaved: (newValue)=>back.user.nome = newValue,
-      initialValue: back.user.nome,
-      decoration: InputDecoration(
-        labelText: 'Nome:'
-      ),
-    );
-  }
   Widget fieldEmail(UserFormBack back){
     return TextFormField(
       validator: back.validateEmail,
-      onSaved: (newValue) => back.user.email = newValue,
       initialValue: back.user.email,
       decoration: InputDecoration(
         labelText: 'E-mail:'
@@ -28,26 +16,23 @@ class UserForm extends StatelessWidget {
       ),
     );
   }
-  Widget fieldTelefone(UserFormBack back){
-    var mask = MaskTextInputFormatter(mask:'(##)# ####-####');
+
+  Widget fieldSenha(UserFormBack back) {
     return TextFormField(
-      validator: back.validatePhone,
-      onSaved: (newValue) => back.user.telefone = newValue,
-      initialValue: back.user.telefone,
-      inputFormatters: [mask],
-      keyboardType: TextInputType.number,
-      decoration: InputDecoration(
-        labelText: 'Telefone:',
-        hintText: '(99)9 9999-9999'
-      ),
+      validator: back.validateEmail,
+      initialValue: back.user.senha,
+      decoration:
+          InputDecoration(labelText: 'Senha:'),
     );
   }
+  
+  
   
   @override
   Widget build(BuildContext context) {
     var _back = UserFormBack(context);
     return Scaffold(
-      appBar: AppBar(title: Text('Cadastro de Usuário'),
+      appBar: AppBar(title: Text('Faça seu Login'),
       actions:[
         IconButton(icon: Icon(Icons.save), 
         onPressed: (){
@@ -68,9 +53,7 @@ class UserForm extends StatelessWidget {
           key: _form,
           child: Column(
             children: [
-              fieldName(_back),
               fieldEmail(_back),
-              fieldTelefone(_back),
             ],) 
         ,),
       ),
