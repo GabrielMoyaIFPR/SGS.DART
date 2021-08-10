@@ -34,7 +34,7 @@ class LoginForm extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text('Faça seu Login'),
       actions:[
-        IconButton(icon: Icon(Icons.save), 
+        IconButton(icon: Icon(Icons.lock_open), 
         onPressed: (){
           _form.currentState.validate();
           _form.currentState.save();
@@ -54,6 +54,7 @@ class LoginForm extends StatelessWidget {
           child: Column(
             children: [
               fieldEmail(_back),
+              fieldSenha(_back)
             ],) 
         ,),
       ),

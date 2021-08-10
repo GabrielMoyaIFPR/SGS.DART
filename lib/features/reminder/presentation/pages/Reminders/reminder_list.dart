@@ -1,11 +1,11 @@
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter/material.dart';
-import 'package:sgs/features/reminder/domain/entities/user.dart';
-import 'package:sgs/features/reminder/presentation/pages/Users/user_list_back.dart';
+import 'package:sgs/features/reminder/domain/entities/reminder.dart';
+import 'package:sgs/features/reminder/presentation/pages/Reminders/reminder_list_back.dart';
 
-class UserList extends StatelessWidget {
+class ReminderList extends StatelessWidget {
 
- final _back = UserListBack();
+ final _back = ReminderListBack();
 
 Widget iconEditButton(Function onPressed){
   return IconButton(icon: Icon(Icons.edit), color:Colors.blue, onPressed:onPressed);
@@ -57,7 +57,7 @@ Widget iconRemoveButton(BuildContext context, Function remove){
                     if(!futuro.hasData){
                     return CircularProgressIndicator();
                     }else{
-                      List<User> lista = futuro.data;
+                      List<Reminder> lista = futuro.data;
                       return ListView.builder(
                       itemCount: lista.length,
                       itemBuilder: (context, i) {
@@ -67,8 +67,8 @@ Widget iconRemoveButton(BuildContext context, Function remove){
                           onTap: (){
                             _back.goToDetails(context, contato);
                           },
-                          title: Text(contato.nome),
-                          subtitle: Text(contato.telefone),
+                          title: Text(contato.titulo),
+                          subtitle: Text(contato.descricao),
                           trailing: Container(
                             width: 100,
                             child: Row(

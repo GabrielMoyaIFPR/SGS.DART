@@ -1,11 +1,11 @@
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter/material.dart';
-import 'package:sgs/features/reminder/domain/entities/user.dart';
-import 'package:sgs/features/reminder/presentation/pages/Users/user_list_back.dart';
+import 'package:sgs/features/reminder/domain/entities/sleep.dart';
+import 'package:sgs/features/reminder/presentation/pages/Sleep/sleep_list_back.dart';
 
-class UserList extends StatelessWidget {
+class SleepList extends StatelessWidget {
 
- final _back = UserListBack();
+ final _back = SleepListBack();
 
 Widget iconEditButton(Function onPressed){
   return IconButton(icon: Icon(Icons.edit), color:Colors.blue, onPressed:onPressed);
@@ -40,7 +40,7 @@ Widget iconRemoveButton(BuildContext context, Function remove){
   Widget build(BuildContext context) {
           return Scaffold(
                 appBar: AppBar(
-                  title: Text('Lista de Usuários'),
+                  title: Text('Lista de Registros'),
                   actions: [
                     IconButton(
                       icon: Icon(Icons.add),
@@ -57,7 +57,7 @@ Widget iconRemoveButton(BuildContext context, Function remove){
                     if(!futuro.hasData){
                     return CircularProgressIndicator();
                     }else{
-                      List<User> lista = futuro.data;
+                      List<Sleep> lista = futuro.data;
                       return ListView.builder(
                       itemCount: lista.length,
                       itemBuilder: (context, i) {
@@ -67,8 +67,8 @@ Widget iconRemoveButton(BuildContext context, Function remove){
                           onTap: (){
                             _back.goToDetails(context, contato);
                           },
-                          title: Text(contato.nome),
-                          subtitle: Text(contato.telefone),
+                          title: Text(contato.dataInicial),
+                          subtitle: Text(contato.dataInicial),
                           trailing: Container(
                             width: 100,
                             child: Row(

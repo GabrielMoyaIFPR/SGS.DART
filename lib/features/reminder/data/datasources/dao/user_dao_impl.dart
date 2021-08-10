@@ -20,6 +20,7 @@ class UserDAOimpl implements UserDAO {
           email: linha['email'],
           senha: linha['senha']);
     });
+
     return lista;
   }
 
