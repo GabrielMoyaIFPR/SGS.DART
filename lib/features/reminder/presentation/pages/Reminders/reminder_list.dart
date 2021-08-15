@@ -2,6 +2,8 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter/material.dart';
 import 'package:sgs/features/reminder/domain/entities/reminder.dart';
 import 'package:sgs/features/reminder/presentation/pages/Reminders/reminder_list_back.dart';
+import 'package:sgs/features/reminder/presentation/pages/Sleep/sleep_list.dart';
+import 'package:sgs/features/reminder/presentation/pages/Users/user_list.dart';
 
 class ReminderList extends StatelessWidget {
 
@@ -40,7 +42,7 @@ Widget iconRemoveButton(BuildContext context, Function remove){
   Widget build(BuildContext context) {
           return Scaffold(
                 appBar: AppBar(
-                  title: Text('Lista de Usuários'),
+                  title: Text('Lista de Lembretes'),
                   actions: [
                     IconButton(
                       icon: Icon(Icons.add),
@@ -48,6 +50,24 @@ Widget iconRemoveButton(BuildContext context, Function remove){
                          _back.goToForm(context);
                       },
                     ),
+                    IconButton(
+                        icon: Icon(Icons.home),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) => UserList()));
+                      }
+                    ),
+                    IconButton(
+                        icon: Icon(Icons.timelapse),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) => SleepList()));
+                        }),
+            
                   ],
                 ),
                 body: Observer(builder:(context) {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sgs/features/reminder/presentation/pages/Users/user_form_back.dart';
-
+import 'package:sgs/features/reminder/presentation/pages/Users/user_list.dart';
 
 class LoginForm extends StatelessWidget {
   
@@ -25,9 +25,7 @@ class LoginForm extends StatelessWidget {
           InputDecoration(labelText: 'Senha:'),
     );
   }
-  
-  
-  
+
   @override
   Widget build(BuildContext context) {
     var _back = UserFormBack(context);
@@ -36,14 +34,8 @@ class LoginForm extends StatelessWidget {
       actions:[
         IconButton(icon: Icon(Icons.lock_open), 
         onPressed: (){
-          _form.currentState.validate();
-          _form.currentState.save();
-          if(_back.isValid){
-            _back.save();
-            Navigator.of(context).pop();
+          Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => UserList()));
           }
-        }
-
         )
       ],
       ),

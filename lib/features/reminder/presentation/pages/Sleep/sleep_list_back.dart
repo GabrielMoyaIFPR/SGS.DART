@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:get_it/get_it.dart';
 import 'package:mobx/mobx.dart';
+import 'package:sgs/features/reminder/domain/entities/sleep.dart';
 import 'package:sgs/features/reminder/domain/entities/sleep_service.dart';
 import 'package:sgs/features/reminder/presentation/my_app.dart';
 
@@ -18,7 +19,7 @@ abstract class _SleepListBack with Store{
   //metodo para atualizar a lista de contatos
   @action
   refreshList([dynamic value]){
-    list = _service.find() as Future<List<Sleep>>;
+    list = _service.find();
   }
   _SleepListBack(){
     refreshList();
@@ -44,5 +45,3 @@ abstract class _SleepListBack with Store{
 
 }
 
-class Sleep {
-}

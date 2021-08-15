@@ -1,6 +1,8 @@
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter/material.dart';
 import 'package:sgs/features/reminder/domain/entities/user.dart';
+import 'package:sgs/features/reminder/presentation/pages/Reminders/reminder_list.dart';
+import 'package:sgs/features/reminder/presentation/pages/Sleep/sleep_list.dart';
 import 'package:sgs/features/reminder/presentation/pages/Users/user_list_back.dart';
 
 class UserList extends StatelessWidget {
@@ -48,6 +50,18 @@ Widget iconRemoveButton(BuildContext context, Function remove){
                          _back.goToForm(context);
                       },
                     ),
+                    IconButton(
+                     icon: Icon(Icons.timelapse),
+                     onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => SleepList()));
+                     }
+                    ),
+                    IconButton(
+                     icon: Icon(Icons.note_add),
+                     onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => ReminderList()));
+                     }
+                    )
                   ],
                 ),
                 body: Observer(builder:(context) {
@@ -94,4 +108,5 @@ Widget iconRemoveButton(BuildContext context, Function remove){
           )
         );
       } 
+
 }
