@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sgs/features/reminder/domain/entities/sleep.dart';
 import 'package:sgs/features/reminder/presentation/pages/Sleep/sleep_details_back.dart';
-
-
 import 'package:url_launcher/url_launcher.dart';
 
 class SleepDetails extends StatelessWidget {
@@ -13,7 +11,6 @@ class SleepDetails extends StatelessWidget {
         return AlertDialog(
           title: Text('Alerta'),
           content: Text('Não foi possível encontrar um APP compatível'),
-
         );
       }
     );
@@ -35,8 +32,8 @@ class SleepDetails extends StatelessWidget {
                     subtitle: Text('${sleep.dataInicial}'),
                     trailing: Container(
                       width: width/4,
-                      ),
                     ),
+                  ),
                 ),
                 Card(
                 child: ListTile(
@@ -47,17 +44,16 @@ class SleepDetails extends StatelessWidget {
                   ),
                 ),
               ),
-              ],
-            )
-            ,
-            floatingActionButton: FloatingActionButton(
-              child: Icon(Icons.arrow_back),
-              onPressed: (){
-                _back.goToBack();
-              }
-            ),
+            ],
+          ),
+          floatingActionButton: FloatingActionButton(
+            child: Icon(Icons.arrow_back),
+            onPressed: (){
+              _back.goToBack();
+            }
+          ),
         );
-        },
-      );
+      },
+    );
   }
 }

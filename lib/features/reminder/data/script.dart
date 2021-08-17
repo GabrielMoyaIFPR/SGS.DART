@@ -21,6 +21,7 @@ final createTableSleep = '''
    id INTEGER NOT NULL PRIMARY KEY
    ,DATE dataInicial NOT NULL
    ,DATE dataFinal
+   ,FOREIGN KEY (usuario) REFERENCES Persons(user.nome)
  )
 ''';
 
@@ -45,11 +46,11 @@ VALUES('Beber Água', 'Tomar 2 vezes ao dia')
 """;
 
 final insert5 = """
-INSERT INTO sleep(titulo,descricao)
-VALUES('2020-03-20', '2020-03-20')
+INSERT INTO sleep(dataInicial,dataFinal)
+VALUES('2020-03-20', '2020-03-20', 'Paula')
 """;
 
 final insert6 = """
 INSERT INTO sleep(dataInicial,dataFinal)
-VALUES('2021-06-20', '2021-06-20')
+VALUES('2021-06-20', '2021-06-20', 'Pietro')
 """;

@@ -8,26 +8,17 @@ import 'package:sgs/features/reminder/domain/entities/reminder_service.dart';
 class ReminderFormBack {
   Reminder reminder;
   var _service = GetIt.I.get<ReminderService>();
-  bool _nameIsValid;
-  bool _emailIsValid;
-  bool _telefoneIsValid;
-
-  
-  bool get isValid=> _nameIsValid && _emailIsValid && _telefoneIsValid;
-
+ 
   //diferenciar novo com alteração
   ReminderFormBack(BuildContext context){
     var parameter = ModalRoute.of(context).settings.arguments;
-    reminder=(parameter==null)? Reminder(id: null, titulo: '', descricao: ''): parameter;
+    reminder=(parameter==null)? Reminder(id: null, titulo: null, descricao: null): parameter;
   }
-  
 
   //salvar
   save()async{
     await _service.save(reminder);
   }
-
-  //validações
   
 
 }

@@ -34,8 +34,9 @@ Widget iconRemoveButton(BuildContext context, Function remove){
             ),
           ],
         )
-        );
-  });
+      );
+    }
+  );
 }
 
  @override
@@ -67,7 +68,6 @@ Widget iconRemoveButton(BuildContext context, Function remove){
                               MaterialPageRoute(
                                   builder: (BuildContext context) => SleepList()));
                         }),
-            
                   ],
                 ),
                 body: Observer(builder:(context) {
@@ -99,19 +99,18 @@ Widget iconRemoveButton(BuildContext context, Function remove){
                                 iconRemoveButton(context, (){
                                   _back.remove(contato.id);
                                   Navigator.of(context).pop();
-                                })
-                                    
-                              ],
-                            ),
-                          ),
-                        );
-                      }
+                            })   
+                          ],
+                        ),
+                      ),
                     );
                   }
-                }
-              );
+                );
+              }
             }
-          )
-        );
-      } 
+          );
+        }
+      )
+    );
+  } 
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sgs/features/reminder/domain/entities/reminder.dart';
 import 'package:sgs/features/reminder/presentation/pages/Reminders/reminder_details_back.dart';
-
 import 'package:url_launcher/url_launcher.dart';
 
 class ReminderDetails extends StatelessWidget {
@@ -47,8 +46,7 @@ class ReminderDetails extends StatelessWidget {
                 ),
               ),
               ],
-            )
-            ,
+            ),
             floatingActionButton: FloatingActionButton(
               child: Icon(Icons.arrow_back),
               onPressed: (){
