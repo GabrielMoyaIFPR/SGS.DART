@@ -42,6 +42,16 @@ class UserForm extends StatelessWidget {
       ),
     );
   }
+  Widget fieldSenha(UserFormBack back) {
+    return TextFormField(
+      validator: back.validatePassword,
+      onSaved: (newValue) => back.user.senha = newValue,
+      initialValue: back.user.senha,
+      keyboardType: TextInputType.visiblePassword,
+      decoration:
+          InputDecoration(labelText: 'Senha:', hintText: '*******'),
+    );
+  }
   
   @override
   Widget build(BuildContext context) {
@@ -71,6 +81,7 @@ class UserForm extends StatelessWidget {
               fieldName(_back),
               fieldEmail(_back),
               fieldTelefone(_back),
+              fieldSenha(_back)
             ],) 
         ,),
       ),

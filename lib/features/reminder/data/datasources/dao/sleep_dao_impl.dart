@@ -37,7 +37,7 @@ class SleepDAOimpl implements SleepDAO {
     var sql;
     if (sleep.id == null) {
       sql =
-          'INSERT INTO sleep (dataInicial, dataFinal, usuario)VALUES(?,?)';
+          'INSERT INTO sleep (dataInicial, dataFinal, usuario)VALUES(?,?,?)';
       _db.rawInsert(sql,
           [sleep.dataInicial, sleep.dataFinal, sleep.usuario]);
     } else {

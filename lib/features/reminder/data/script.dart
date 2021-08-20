@@ -4,7 +4,7 @@ final createTable = '''
    ,nome VARCHAR(200) NOT NULL
    ,telefone CHAR(16) NOT NULL
    ,email VARCHAR(150) NOT NULL
-   ,senha VARCHAR(300)
+   ,senha VARCHAR(300) NOT NULL
  )
 ''';
 
@@ -19,19 +19,20 @@ final createTableReminder = '''
 final createTableSleep = '''
  CREATE TABLE sleep(
    id INTEGER NOT NULL PRIMARY KEY
-   ,DATE dataInicial NOT NULL
-   ,DATE dataFinal
-   ,FOREIGN KEY (usuario) REFERENCES Persons(user.nome)
+   ,usuario_id INTEGER NOT NULL
+   ,dataInicial DATE NOT NULL
+   ,dataFinal DATE NOT NULL
+   ,FOREIGN KEY (usuario_id) REFERENCES user (usuario_id)
  )
 ''';
 
 final insert1 = """
-INSERT INTO user(nome,telefone,email,perfil)
+INSERT INTO user(nome,telefone,email,senha)
 VALUES('Pietro','(44) 999597866','pietro@gmail.com','123456')
 """;
 
 final insert2 = """
-INSERT INTO user(nome,telefone,email,perfil)
+INSERT INTO user(nome,telefone,email,senha)
 VALUES('Paula','(44) 999597866','pietro@gmail.com','654321')
 """;
 
@@ -46,11 +47,11 @@ VALUES('Beber Água', 'Tomar 2 vezes ao dia')
 """;
 
 final insert5 = """
-INSERT INTO sleep(dataInicial,dataFinal)
-VALUES('2020-03-20', '2020-03-20', 'Paula')
+INSERT INTO sleep(dataInicial,dataFinal,usuario_id)
+VALUES('2020-03-20', '2020-03-20', 1)
 """;
 
 final insert6 = """
-INSERT INTO sleep(dataInicial,dataFinal)
-VALUES('2021-06-20', '2021-06-20', 'Pietro')
+INSERT INTO sleep(dataInicial,dataFinal, usuario_id)
+VALUES('2021-06-20', '2021-06-20', 2)
 """;

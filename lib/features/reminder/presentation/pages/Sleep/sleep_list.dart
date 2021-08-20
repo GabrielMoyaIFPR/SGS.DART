@@ -82,13 +82,14 @@ Widget iconRemoveButton(BuildContext context, Function remove){
                       itemCount: lista.length,
                       itemBuilder: (context, i) {
                         var contato = lista[i];
-                       
+                        // var dataInicial = contato.dataInicial.toList();
+                        // var dataFinal = contato.dataInicial.toList();
                       return ListTile(
                           onTap: (){
                             _back.goToDetails(context, contato);
                           },
-                          // title: Text(contato.dataInicial),
-                          // subtitle: Text(contato.dataInicial),
+                          // title: Text(dataInicial),
+                          // subtitle: Text(dataFinal),
                           trailing: Container(
                             width: 100,
                             child: Row(

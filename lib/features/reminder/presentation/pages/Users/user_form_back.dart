@@ -11,9 +11,10 @@ class UserFormBack {
   bool _nameIsValid;
   bool _emailIsValid;
   bool _telefoneIsValid;
+  bool _senhaIsValid;
 
   
-  bool get isValid=> _nameIsValid && _emailIsValid && _telefoneIsValid;
+  bool get isValid=> _nameIsValid && _emailIsValid && _telefoneIsValid && _senhaIsValid;
 
   //diferenciar novo com alteração
   UserFormBack(BuildContext context){
@@ -56,6 +57,16 @@ class UserFormBack {
       return null;
     }catch(e){
       _telefoneIsValid= false;
+      return e.toString();
+    }
+  }
+  String validatePassword(String senha) {
+    try {
+      _service.validatePassword(senha);
+      _senhaIsValid = true;
+      return null;
+    } catch (e) {
+      _senhaIsValid = false;
       return e.toString();
     }
   }

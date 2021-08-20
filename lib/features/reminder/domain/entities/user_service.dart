@@ -58,13 +58,13 @@ class UserService {
     var min = 8;
     var max = 50;
     if (senha == null) {
-      throw new DomainLayerException('O nome é obrigatório');
+      throw new DomainLayerException('A senha é obrigatória');
     } else if (senha.length < min) {
       throw new DomainLayerException(
-          'O nome deve possuir pelo menos $min carácteres');
+          'A senha deve possuir pelo menos $min carácteres');
     } else if (senha.length > max) {
       throw new DomainLayerException(
-          'O nome deve possuir no máximo $max carácteres');
+          'A senha deve possuir no máximo $max carácteres');
     }
   }
 }
