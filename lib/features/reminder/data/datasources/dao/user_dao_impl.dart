@@ -25,7 +25,7 @@ class UserDAOimpl implements UserDAO {
   }
 
   @override
-  remove(int id) async {
+  remove(dynamic id) async {
     _db = await Connection.get();
     var sql = 'DELETE FROM user WHERE id=?';
     _db.rawDelete(sql, [id]);

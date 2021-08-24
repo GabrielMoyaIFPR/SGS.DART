@@ -36,7 +36,7 @@ abstract class _UserListBack with Store{
   }
 
   //excluir
-  remove(int id){
+  remove(dynamic id){
     _service.remove(id);
     refreshList();
   }

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:sgs/features/reminder/domain/entities/user.dart';
 
 class Sleep extends Equatable {
-  int id;
+  dynamic id;
   DateTime dataInicial;
   DateTime dataFinal;
   User usuario;

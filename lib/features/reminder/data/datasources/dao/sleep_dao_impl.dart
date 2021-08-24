@@ -16,15 +16,15 @@ class SleepDAOimpl implements SleepDAO {
       var linha = resultado[i];
       return Sleep(
           id: linha['id'],
-          dataInicial: linha['dataInicial'],
-          dataFinal: linha['dataFinal'],
+          dataInicial: linha[DateTime.parse("1969-07-20 20:18:04Z")],
+          dataFinal: linha[DateTime.parse("1969-07-20 20:18:04Z")],
           usuario: linha['usuario']);
     });
     return lista;
   }
 
   @override
-  remove(int id) async {
+  remove(dynamic id) async {
     _db = await Connection.get();
     var sql = 'DELETE FROM sleep WHERE id=?';
     _db.rawDelete(sql, [id]);

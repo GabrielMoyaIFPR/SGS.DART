@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "665421023811",
+    "project_id": "sistema-gerenciador-de-sono",
+    "storage_bucket": "sistema-gerenciador-de-sono.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:665421023811:android:bfbe5599e39d2cd85f22f6",
+        "android_client_info": {
+          "package_name": "br.com.moya.sgs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "665421023811-bdahg18ph5llpf091joqft7q6vpthccm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAo2MNkRN4bUBSqMx8XSAhNDVndXGwrC6s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "665421023811-bdahg18ph5llpf091joqft7q6vpthccm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

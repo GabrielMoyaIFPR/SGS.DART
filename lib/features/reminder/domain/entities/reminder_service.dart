@@ -10,7 +10,7 @@ class ReminderService {
     _dao.save(reminder);
   }
 
-  remove(int id) {
+  remove(dynamic id) {
     _dao.remove(id);
   }
 

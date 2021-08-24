@@ -4,7 +4,7 @@ import 'package:sgs/features/reminder/presentation/pages/Reminders/reminder_form
 
 class ReminderForm extends StatelessWidget {
   
-
+final _form = GlobalKey<FormState>();
   Widget fieldTitulo(ReminderFormBack back){
     return TextFormField(
       onSaved: (newValue)=>back.reminder.titulo = newValue,
@@ -24,11 +24,38 @@ class ReminderForm extends StatelessWidget {
       ),
     );
   }
-
+  
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    var _back = ReminderFormBack(context);
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Cadastro de Lembrete'),
+        actions: [
+          IconButton(
+              icon: Icon(Icons.save),
+              onPressed: () {
+                _form.currentState.validate();
+                _form.currentState.save();
+                
+                  _back.save();
+                  Navigator.of(context).pop();
+                }
+              )
+        ],
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(10),
+        child: Form(
+          key: _form,
+          child: Column(
+            children: [
+              fieldTitulo(_back),
+              fieldDescricao(_back),
+            ],
+          ),
+        ),
+      ),
+    );
   }
-  
 }

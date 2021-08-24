@@ -10,7 +10,7 @@ class SleepService {
     _dao.save(sleep);
   }
 
-  remove(int id) {
+  remove(dynamic id) {
     _dao.remove(id);
   }
 

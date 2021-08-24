@@ -4,7 +4,7 @@ import 'package:equatable/equatable.dart';
 
 class Reminder extends Equatable {
 
-  int id;
+  dynamic id;
   String titulo;
   String descricao;
 

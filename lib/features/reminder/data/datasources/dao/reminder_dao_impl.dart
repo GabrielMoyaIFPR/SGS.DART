@@ -22,7 +22,7 @@ class ReminderDAOimpl implements ReminderDAO {
   }
 
   @override
-  remove(int id) async {
+  remove(dynamic id) async {
     _db = await Connection.get();
     var sql = 'DELETE FROM reminder WHERE id=?';
     _db.rawDelete(sql, [id]);
